@@ -1,0 +1,20 @@
+body {
+  background-color: blue;
+  height: 100vh;
+}
+
+.target {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  width: 600px;
+  height: 600px;
+  border: 2px dashed white;
+}
+
+.cell {
+  width: calc(100% / 10);
+  height: calc(100% / 10);
+  color: white;
+  border: 2px solid white;
+}

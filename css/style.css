@@ -17,8 +17,6 @@ h1 {
   text-align: center;
 }
 .cell {
-  width: calc(100% / 10);
-  height: calc(100% / 10);
   color: white;
   border: 2px solid white;
   display: flex;
@@ -26,10 +24,24 @@ h1 {
   justify-content: center;
   cursor: pointer;
 }
+
 .cell:hover {
   background-color: rgba(0, 0, 0, 0.3);
 }
 
 .cell.clicked {
   background-color: aqua;
+}
+
+.easy {
+  width: calc(100% / 10);
+  height: calc(100% / 10);
+}
+.medium {
+  width: calc(100% / 9);
+  height: calc(100% / 9);
+}
+.hard {
+  width: calc(100% / 7);
+  height: calc(100% / 7);
 }

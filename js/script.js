@@ -31,17 +31,19 @@ const createCell = (content) => {
   cell.append(content);
   return cell;
 };
+// creo un oggetto con i valori di difficoltà
 
-// 0.5 preparo le impostazioni iniziali
-const rows = 10;
-const cols = 10;
-const totalCells = rows * cols;
+const cellsDifficulty = {
+  easy: 100,
+  medium: 81,
+  hard: 49,
+};
 
 // 1 prendo gli elementi dal dom
 const container = document.getElementById("custom-container");
 const button = document.getElementById("button");
 const title = document.getElementById("title");
-const pippo = document.getElementById("pippo");
+const select = document.getElementById("difficult-select");
 
 // 2 creo un event listener collegato al bottone
 button.addEventListener("click", function () {
@@ -49,16 +51,20 @@ button.addEventListener("click", function () {
   if (prevContainer) {
     prevContainer.remove();
   }
+  const difficulty = cellsDifficulty[select.value];
+  console.log(difficulty);
   const grid = document.createElement("div");
   grid.setAttribute("id", "grid");
   // 3 creo un loop che crei le caselle
-  for (let i = 1; i <= totalCells; i++) {
+  for (let i = 1; i <= difficulty; i++) {
     const cell = createCell(i);
+
     // 4 creo un event listener che aggiunga la classe clicked alle varie caselle
     cell.addEventListener("click", () => {
       cell.classList.toggle("clicked");
       console.log(i);
     });
+    cell.classList.add(select.value);
     grid.appendChild(cell);
     title && title.remove();
     container.appendChild(grid);

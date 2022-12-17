@@ -3,18 +3,33 @@ body {
   height: 100vh;
 }
 
-.target {
+#grid {
+  width: 600px;
+  height: 600px;
   display: flex;
   flex-wrap: wrap;
   align-content: flex-start;
-  width: 600px;
-  height: 600px;
-  border: 2px dashed white;
 }
 
+h1 {
+  width: 600px;
+  line-height: 600px;
+  text-align: center;
+}
 .cell {
   width: calc(100% / 10);
   height: calc(100% / 10);
   color: white;
   border: 2px solid white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.cell:hover {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.cell.clicked {
+  background-color: aqua;
 }
